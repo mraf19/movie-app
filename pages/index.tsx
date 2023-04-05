@@ -6,7 +6,7 @@ export default function Home({ movies }: MoviesType) {
   return (
     <>
       <div className="container mx-auto mt-44 mb-32">
-        <h1 className="text-center text-5xl font-bold text-slate-900">
+        <h1 className="text-center text-5xl font-bold font-mono text-slate-900">
           Movie App
         </h1>
         <div className="flex flex-wrap items-center justify-center gap-10 mt-10 mx-auto">

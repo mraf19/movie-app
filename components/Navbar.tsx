@@ -1,10 +1,13 @@
+import { useRouter } from "next/router";
 import Link from "next/link";
+
 export default function Navbar() {
+  const router = useRouter();
   return (
     <nav className="fixed top-0 w-full border-b-[1px] border-gray-700 bg-white  dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center justify-start">
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+          <span className="self-center text-5xl font-semibold whitespace-nowrap dark:text-white font-mono">
             Movie App
           </span>
         </a>
@@ -13,7 +16,9 @@ export default function Navbar() {
             <li>
               <Link
                 href="/"
-                className="block py-2 pl-3 pr-4 text-gray-900 md:active:text-blue-700 md:hover:text-blue-700 bg-blue-700 rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500"
+                className={`block py-2 pl-3 pr-4 ${
+                  router.route === "/" ? "text-blue-500" : "text-gray-900"
+                } md:active:text-blue-700 md:hover:text-blue-700 bg-blue-700 rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500`}
               >
                 Home
               </Link>
@@ -21,7 +26,9 @@ export default function Navbar() {
             <li>
               <Link
                 href="/on-air"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className={`block py-2 pl-3 pr-4 ${
+                  router.route === "/on-air" ? "text-blue-500" : "text-gray-900"
+                } rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent`}
               >
                 On Airing
               </Link>
@@ -29,7 +36,11 @@ export default function Navbar() {
             <li>
               <Link
                 href="/coming-soon"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className={`block py-2 pl-3 pr-4 ${
+                  router.route === "/coming-soon"
+                    ? "text-blue-500"
+                    : "text-gray-900"
+                } rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent`}
               >
                 Coming Soon
               </Link>
@@ -37,7 +48,11 @@ export default function Navbar() {
             <li>
               <Link
                 href="/favorite"
-                className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className={`block py-2 pl-3 pr-4 ${
+                  router.route === "/favorite"
+                    ? "text-blue-500"
+                    : "text-gray-900"
+                } rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent`}
               >
                 Favorite
               </Link>
