@@ -1,7 +1,7 @@
 import Link from "next/link";
 export default function Navbar() {
   return (
-    <nav className="sticky border-b-[1px] border-gray-900 bg-white  dark:bg-gray-900">
+    <nav className="fixed top-0 w-full border-b-[1px] border-gray-700 bg-white  dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center justify-start">
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
