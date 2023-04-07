@@ -7,6 +7,7 @@ import {
 import { useState } from "react";
 import ReactModal from "react-modal";
 import Star from "./Star";
+import { useSession } from "next-auth/react";
 
 ReactModal.setAppElement("#Card");
 
@@ -15,6 +16,7 @@ export default function Card({ movie }: MovieType) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [hoverIndex, setHoverIndex] = useState(0);
   const [rating, setRating] = useState(0);
+  const { data: session } = useSession() 
   return (
     <div
       id="Card"
@@ -34,7 +36,8 @@ export default function Card({ movie }: MovieType) {
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
           {movie.description}
         </p>
-        <div>
+        {
+          session && <div>
           <a
             onClick={() => setIsFavorite(!isFavorite)}
             className={`inline-flex items-center px-3 py-2 mr-3 text-sm font-medium text-center text-slate-50 ${
@@ -98,6 +101,8 @@ export default function Card({ movie }: MovieType) {
             </button>
           </ReactModal>
         </div>
+        }
+        
       </div>
     </div>
   );
