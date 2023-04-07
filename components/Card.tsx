@@ -17,6 +17,7 @@ export default function Card({ movie }: MovieType) {
   const [hoverIndex, setHoverIndex] = useState(0);
   const [rating, setRating] = useState(0);
   const { data: session } = useSession() 
+  console.log(movie.imageUrl)
   return (
     <div
       id="Card"
@@ -24,7 +25,7 @@ export default function Card({ movie }: MovieType) {
     >
       <div className="overflow-hidden">
         <img
-          src="/1.jpg"
+          src={movie.imageUrl}
           alt="pic"
           className="w-full h-[300px] object-cover transition-all hover:scale-125 ease-in-out"
         />
